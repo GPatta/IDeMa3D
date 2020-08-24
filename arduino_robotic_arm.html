@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+
+<html>
+
+	<head>
+		<title>IDeMa 3D</title>
+		<link rel="icon" href="Graphics/icon2.ico" type="image/x-icon" /> 
+		<link rel="stylesheet" href="productStyle.css">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Ubuntu&display=swap&family=Pacifico&display=swap&family=Material+Icons" rel="stylesheet">
+
+	</head>
+
+	<body>
+		<header class="productHeader">
+			<a href="index.html" >
+				<i class="material-icons" id="menuIcon">home</i>
+			</a>
+			<img src="Graphics/logo.png" />
+			<input type="text" onkeyup="searchbarFunction()" placeholder="Cerca" />
+		</header>
+
+		<h1>Robotic arm</h1>
+		<div class="imageSpace">
+			<a class="imageBTN" onclick="plusSlides(-1)">
+				<i class="material-icons" id="prevImg">navigate_before</i>
+			</a>
+			<div class="mySlides">
+				<img src="Objects/robotic_arm/1.png">
+			</div>
+			<div class="mySlides">
+				<img src="Objects/robotic_arm/2.png">
+			</div>
+			<div class="mySlides">
+				<img src="Objects/robotic_arm/3.png">
+			</div>
+			<div class="mySlides">
+				<img src="Objects/robotic_arm/4.png">
+			</div>
+			<a class="imageBTN" onclick="plusSlides(1)">
+				<i class="material-icons" id="nextImg">navigate_next</i>
+			</a>
+		</div>
+
+		<script>
+			var slideIndex = 1;
+			showSlides(slideIndex);	
+
+			// Next/previous controls
+			function plusSlides(n) {
+  				showSlides(slideIndex += n);
+			}
+
+			// Thumbnail image controls
+			//function currentSlide(n) {
+			//	showSlides(slideIndex = n);
+			//}
+
+			function showSlides(n) {
+  				var i;
+  				var slides = document.getElementsByClassName("mySlides");
+  				var dots = document.getElementsByClassName("dot");
+  				if (n > slides.length) {slideIndex = 1}
+  				if (n < 1) {slideIndex = slides.length}
+  				for (i = 0; i < slides.length; i++) {
+      				slides[i].style.display = "none";
+ 				}
+  				//for (i = 0; i < dots.length; i++) {
+     			//	dots[i].className = dots[i].className.replace(" active", "");
+  				//}
+  				slides[slideIndex-1].style.display = "block";
+  				//dots[slideIndex-1].className += " active";
+			}
+		</script>
+
+		<div class="download">
+			<a href="https://cults3d.com/en/3d-model/gadget/robotic-arm-idema_3d" target="_blank">
+				<img src="Graphics/cults3d_logo.png">
+				<h3>download</h3>
+			</a>
+		</div>
+
+		<div class="infoSpace">
+			<h2>Description</h2>
+			<p></p>
+		</div>
+
+		<footer class="copyright">
+			&copy; 2020 IDeMa3D Blog. All rights reserved.
+		</footer>
+	</body>
+
+</html>

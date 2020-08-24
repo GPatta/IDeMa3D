@@ -1,0 +1,288 @@
+<!DOCTYPE HTML>
+
+<html>
+
+	<head>
+		<title>IDeMa 3D</title>
+		<link rel="icon" href="Graphics/icon2.ico" type="image/x-icon" /> 
+		<link rel="stylesheet" href="style.css">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Ubuntu&display=swap&family=Pacifico&display=swap&family=Material+Icons" rel="stylesheet">
+	</head>
+
+	<body>
+		<header class="header" id="myHeader">
+			<a href="javascript:void(0);" class="icon" onclick="sideMenu()">
+				<i class="material-icons" id="menuIcon">menu</i>
+			</a>
+			<a class="active" href="index.html" >HOME</a>
+			<a href="about.html" >ABOUT</a>
+			<a href="https://cults3d.com/en/users/IDeMa_3D/creations" target="_blank">CULTS3D</a>
+			<a href="https://www.myminifactory.com/users/IDeMa%203D" target="_blank">MYMINIFACTORY</a>
+			<a href="https://www.instagram.com/idema_3d/" target="_blank">INSTAGRAM</a>
+			<img src="Graphics/logo.png" />
+			<input type="text" onkeyup="searchbarFunction()" placeholder="Cerca" />
+		</header>
+
+		<div class="title">
+			<h1 id="i">I</h1>
+			<h1 id="d">D</h1>
+			<h1 id="e">e</h1>
+			<h1 id="m">M</h1>
+			<h1 id="a">a </h1>
+			<h1 id="th">3</h1>
+			<h1 id="di">D</h1>
+		</div>
+
+		<div class="filters">
+			<button onclick="toggleFilters()">
+				<i class="material-icons" id="filterIcon">filter_alt</i>
+				<p>Filters</p>
+				<i class="material-icons" id="doubleArrowIcon">double_arrow</i>
+			</button>
+			<button class="filterBTN" onclick="showGroups('all')">ALL</button>
+			<button class="filterBTN" onclick="showGroups('robotics')">ROBOTICS</button>
+			<button class="filterBTN" onclick="showGroups('photography')">PHOTOGRAPHY</button>
+			<button class="filterBTN" onclick="showGroups('vases')">VASES</button>
+			<button class="filterBTN" onclick="showGroups()">GADGETS</button>
+		</div>
+
+		<div class="layout">
+			<a href="page1.html" class="object robotics" id="robotic_arm">
+				<img src="Objects/robotic_arm_small.jpg" />
+			</a>
+			<a href="about.html" class="object robotics" id="arduino_robotic_arm">
+				<img src="Objects/arduino_robotic_arm_small.jpg" />
+			</a>
+			<a href="about.html" class="object photography" id="motorized_camera_slider">
+				<img src="Objects/motorized_camera_slider_small.jpg" />
+			</a>
+			<a href="about.html" class="object photography" id="rotating_platform">
+				<img src="Objects/rotating_platform_small.jpg" />
+			</a>
+			<a href="about.html" class="object photography" id="action_camera_tripod">
+				<img src="Objects/action_camera_tripod_small.jpg" />
+			</a>
+			<a href="about.html" class="object photography" id="smartphone_handgrip">
+				<img src="Objects/smartphone_handgrip_small.jpg" />
+			</a>
+			<a href="about.html" class="object photography" id="sd_card_holder">
+				<img src="Objects/sd_card_holder_small.jpg" />
+			</a>
+
+			<a href="about.html" class="object vases" id="cloth_vase">
+				<img src="Objects/_vases/Cloth_vase/1.jpg" />
+			</a>
+			<a href="about.html" class="object vases" id="corrugated_vase">
+				<img src="Objects/_vases/Corrugated_vase/1.jpg" />
+			</a>
+			<a href="about.html" class="object vases" id="cup_vase">
+				<img src="Objects/_vases/Cup_vase/1.jpg" />
+			</a>
+			<a href="about.html" class="object vases" id="jagged_vase">
+				<img src="Objects/_vases/Jagged_vase/1.jpg" />
+			</a>
+			<a href="about.html" class="object vases" id="log_vase">
+				<img src="Objects/_vases/Log_vase/1.jpg" />
+			</a>
+			<a href="about.html" class="object vases" id="melted_vase">
+				<img src="Objects/_vases/Melted_vase/1.jpg" />
+			</a>
+			<a href="about.html" class="object vases" id="thickflower_vase">
+				<img src="Objects/_vases/Thickflower_vase/1.jpg" />
+			</a>
+			<a href="about.html" class="object vases" id="tissue_vase">
+				<img src="Objects/_vases/Tissue_vase/1.jpg" />
+			</a>
+			<a href="about.html" class="object vases" id="twisted_vase">
+				<img src="Objects/_vases/Twisted_vase/1.jpg" />
+			</a>
+
+		</div>
+
+		<script>
+
+			function sideMenu()
+			{
+				var x = document.getElementById("myHeader");
+				if (x.className === "header")
+				{
+					x.className += " responsive";
+					var a = document.getElementById("menuIcon");
+					a.innerHTML = "menu_open";
+				}
+				else
+				{
+					x.className = "header";
+					var a = document.getElementById("menuIcon");
+					a.innerHTML = "menu";
+				}
+			}
+
+
+			function toggleFilters()
+			{
+				var filterBTNs = document.getElementsByClassName('filterBTN');
+
+				if (filterBTNs[0].style.opacity == 1)
+				{
+					for (var i = 0; i < filterBTNs.length; i ++) {
+    					filterBTNs[i].style.opacity = '0%';
+					}
+					/*for (var i = 0; i < filterBTNs.length; i ++) {
+    					filterBTNs[i].style.display = 'none';
+					}*/
+					document.getElementById('doubleArrowIcon').innerHTML = 'double_arrow';
+				}
+				else
+				{
+					/*for (var i = 0; i < filterBTNs.length; i ++) {
+    					filterBTNs[i].style.display = 'inline-block';
+					}*/
+					for (var i = 0; i < filterBTNs.length; i ++) {
+    					filterBTNs[i].style.opacity = '100%';
+					}
+					document.getElementById('doubleArrowIcon').innerHTML = 'close';
+				}
+			}
+
+			function showGroups(n)
+			{
+				switch (n)
+				{
+					case "all":
+						var all = document.getElementsByClassName("object");
+						for (var i = 0; i < all.length; i ++)
+						{
+    						all[i].style.display = "inline";
+						}
+						break;
+					case "robotics":
+						var all = document.getElementsByClassName("object");
+						for (var i = 0; i < all.length; i ++)
+						{
+    						all[i].style.display = "none";
+						}
+						var robotics = document.getElementsByClassName("robotics");
+						for (var i = 0; i < robotics.length; i ++)
+						{
+    						robotics[i].style.display = "inline";
+						}
+						break;
+					case "photography":
+						var all = document.getElementsByClassName("object");
+						for (var i = 0; i < all.length; i ++)
+						{
+    						all[i].style.display = "none";
+						}
+						var photography = document.getElementsByClassName("photography");
+						for (var i = 0; i < photography.length; i ++)
+						{
+    						photography[i].style.display = "inline";
+						}
+						break;
+					case "vases":
+						var all = document.getElementsByClassName("object");
+						for (var i = 0; i < all.length; i ++)
+						{
+    						all[i].style.display = "none";
+						}
+						var vases = document.getElementsByClassName("vases");
+						for (var i = 0; i < vases.length; i ++)
+						{
+    						vases[i].style.display = "inline";
+						}
+						break;
+				}
+			}
+
+			/*function showGroups(n)
+			{
+				switch (n)
+				{
+					case "all":
+						document.getElementById('robotic_arm').style.display = "inline";
+						document.getElementById('arduino_robotic_arm').style.display = "inline";
+						document.getElementById('motorized_camera_slider').style.display = "inline";
+						document.getElementById('rotating_platform').style.display = "inline";
+						document.getElementById('action_camera_tripod').style.display = "inline";
+						document.getElementById('smartphone_handgrip').style.display = "inline";
+						document.getElementById('sd_card_holder').style.display = "inline";
+
+						document.getElementById('cloth_vase').style.display = "inline";
+						document.getElementById('corrugated_vase').style.display = "inline";
+						document.getElementById('cup_vase').style.display = "inline";
+						document.getElementById('jagged_vase').style.display = "inline";
+						document.getElementById('log_vase').style.display = "inline";
+						document.getElementById('melted_vase').style.display = "inline";
+						document.getElementById('thickflower_vase').style.display = "inline";
+						document.getElementById('tissue_vase').style.display = "inline";
+						document.getElementById('twisted_vase').style.display = "inline";
+						break;
+					case "robotics":
+						document.getElementById('robotic_arm').style.display = "inline";
+						document.getElementById('arduino_robotic_arm').style.display = "inline";
+						document.getElementById('motorized_camera_slider').style.display = "none";
+						document.getElementById('rotating_platform').style.display = "none";
+						document.getElementById('action_camera_tripod').style.display = "none";
+						document.getElementById('smartphone_handgrip').style.display = "none";
+						document.getElementById('sd_card_holder').style.display = "none";
+
+						document.getElementById('cloth_vase').style.display = "none";
+						document.getElementById('corrugated_vase').style.display = "none";
+						document.getElementById('cup_vase').style.display = "none";
+						document.getElementById('jagged_vase').style.display = "none";
+						document.getElementById('log_vase').style.display = "none";
+						document.getElementById('melted_vase').style.display = "none";
+						document.getElementById('thickflower_vase').style.display = "none";
+						document.getElementById('tissue_vase').style.display = "none";
+						document.getElementById('twisted_vase').style.display = "none";
+						break;
+					case "photography":
+						document.getElementById('robotic_arm').style.display = "none";
+						document.getElementById('arduino_robotic_arm').style.display = "none";
+						document.getElementById('motorized_camera_slider').style.display = "inline";
+						document.getElementById('rotating_platform').style.display = "inline";
+						document.getElementById('action_camera_tripod').style.display = "inline";
+						document.getElementById('smartphone_handgrip').style.display = "inline";
+						document.getElementById('sd_card_holder').style.display = "inline";
+
+						document.getElementById('cloth_vase').style.display = "none";
+						document.getElementById('corrugated_vase').style.display = "none";
+						document.getElementById('cup_vase').style.display = "none";
+						document.getElementById('jagged_vase').style.display = "none";
+						document.getElementById('log_vase').style.display = "none";
+						document.getElementById('melted_vase').style.display = "none";
+						document.getElementById('thickflower_vase').style.display = "none";
+						document.getElementById('tissue_vase').style.display = "none";
+						document.getElementById('twisted_vase').style.display = "none";
+						break;
+					case "vases":
+						document.getElementById('robotic_arm').style.display = "none";
+						document.getElementById('arduino_robotic_arm').style.display = "none";
+						document.getElementById('motorized_camera_slider').style.display = "none";
+						document.getElementById('rotating_platform').style.display = "none";
+						document.getElementById('action_camera_tripod').style.display = "none";
+						document.getElementById('smartphone_handgrip').style.display = "none";
+						document.getElementById('sd_card_holder').style.display = "none";
+
+						document.getElementById('cloth_vase').style.display = "inline";
+						document.getElementById('corrugated_vase').style.display = "inline";
+						document.getElementById('cup_vase').style.display = "inline";
+						document.getElementById('jagged_vase').style.display = "inline";
+						document.getElementById('log_vase').style.display = "inline";
+						document.getElementById('melted_vase').style.display = "inline";
+						document.getElementById('thickflower_vase').style.display = "inline";
+						document.getElementById('tissue_vase').style.display = "inline";
+						document.getElementById('twisted_vase').style.display = "inline";
+						break;
+				}
+			}*/
+
+		</script>
+
+		<footer class="copyright">
+			&copy; 2020 IDeMa3D Blog. All rights reserved.
+		</footer>
+	</body>
+
+</html>

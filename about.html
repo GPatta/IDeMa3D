@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+
+<html>
+
+	<head>
+		<title>IDeMa 3D</title>
+		<link rel="icon" href="Graphics/icon2.ico" type="image/x-icon" /> 
+		<link rel="stylesheet" href="style.css">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Ubuntu&display=swap&family=Pacifico&display=swap&family=Material+Icons" rel="stylesheet">
+	</head>
+
+	<body>
+		<header class="header" id="myHeader">
+			<a href="javascript:void(0);" class="icon" onclick="sideMenu()">
+				<i class="material-icons" id="menuIcon">menu</i>
+			</a>
+			<a href="index.html" >HOME</a>
+			<a class="active" href="about.html" >ABOUT</a>
+			<a href="https://cults3d.com/en/users/IDeMa_3D/creations" target="_blank">CULTS3D</a>
+			<a href="https://www.myminifactory.com/users/IDeMa%203D" target="_blank">MYMINIFACTORY</a>
+			<a href="https://www.instagram.com/idema_3d/" target="_blank">INSTAGRAM</a>
+			<img src="Graphics/logo.png" />
+			<input type="text" onkeyup="searchbarFunction()" placeholder="Cerca" />
+		</header>
+
+		<div class="title">
+			<h1>About IDeMa3D</h1>
+		</div>
+
+
+		<script>
+
+			function sideMenu()
+			{
+				var x = document.getElementById("myHeader");
+				if (x.className === "header")
+				{
+					x.className += " responsive";
+					var a = document.getElementById("menuIcon");
+					a.innerHTML = "menu_open";
+				}
+				else
+				{
+					x.className = "header";
+					var a = document.getElementById("menuIcon");
+					a.innerHTML = "menu";
+				}
+			}
+
+		</script>
+
+		<footer class="copyright">
+			&copy; 2020 IDeMa3D Blog. All rights reserved.
+		</footer>
+	</body>
+
+</html>
