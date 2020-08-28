@@ -40,6 +40,7 @@ body, html
 	margin-left: 30px;
 	padding: 0px;
 	font-size: 16px;
+	font-weight: bold;
 	color: black;
 }
 .header a.active
@@ -49,14 +50,11 @@ body, html
 }
 .header a:hover
 {
-<<<<<<< Updated upstream
 	font-weight: bolder;
 	color: #404040;
-=======
 	/*color: #6A6A6A;*/
 	transform: scale(1.1);
 	transition: 0.2s;
->>>>>>> Stashed changes
 }
 .header a:hover.active
 {
@@ -305,15 +303,8 @@ body, html
     {
         display: block;
         transition: 0.5s;
-        height: 350px;
+        height: 400px;
         position: relative;
-    }
-
-    .header.responsive.icon i
-    {
-        display: block;
-        float: left;
-        clear: left;
     }
 
     .header.responsive a
@@ -324,11 +315,19 @@ body, html
         text-align: left;
         transform: scale(1);
         transition: 0.2s;
+        font-weight: bold;
     }
     .header.responsive a:hover
     {
         transform: scale(1.1);
         transition: 0.2s;
+    }
+
+    .header.responsive a.icon
+    {
+        display: block;
+        float: left;
+        clear: left;
     }
 
     .header.responsive input
