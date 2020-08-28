@@ -9,12 +9,10 @@ body, html
 
 .productHeader
 {
-	height: 100px;
+	height: 90px;
 	text-align: center;
 	background-color: white;
-	margin-left: 10px;
-	margin-right: 10px;
-	/*border: 1px solid black;*/
+	border-bottom: 1px solid lightgray;
 }
 
 .productHeader img
@@ -24,15 +22,15 @@ body, html
 	left: 50%;
 	transform: translate(-50%, 0);
 	padding-top: 10px;
-	width: 80px;
-	height: 80px;
+	width: 70px;
+	height: 70px;
 }
 
 .productHeader a
 {
 	text-decoration: none;
 	float: left;
-	margin-top: 40px;
+	margin-top: 35px;
 	margin-left: 30px;
 	padding: 0px;
 	font-size: 16px;
@@ -60,7 +58,7 @@ body, html
     background-size: 20px 20px;
     background-position: 10px 10px;
     background-repeat: no-repeat;
-    margin-top: 30px;
+    margin-top: 25px;
     margin-right: 20px;
     padding: 10px 10px 10px 40px;
     font-size: 12pt;
@@ -91,7 +89,7 @@ body, html
 
 .productPage h1
 {
-	padding: 20px;
+	margin: 40px 0px 50px;
 	font-size: 50px;
 	font-weight: bold;
 	letter-spacing: 3px;
@@ -103,6 +101,7 @@ body, html
 .productPage .imageSpace
 {
 	display: inline;
+	position: relative;
 	float: left;
 	width: 45%;
 	margin-left: 5%;
@@ -137,8 +136,9 @@ body, html
 #prevImg
 {
 	position: absolute;
-	left: 10vw;
-	top: 60%;
+	left: 5px;
+	top: 50%;
+	transform: translate(0, -50%);
 	cursor: pointer;
 	font-size: 40px;
 }
@@ -146,8 +146,9 @@ body, html
 #nextImg
 {
 	position: absolute;
-	left: 46.5vw;
-	top: 60%;
+	right: 5px;
+	top: 50%;
+	transform: translate(0, -50%);
 	cursor: pointer;
 	font-size: 40px;
 }
@@ -176,11 +177,11 @@ body, html
 #downloadBTN img
 {
 	display: inline;
-	height: 80px;
-	width: 80px;
+	height: 70px;
+	width: 70px;
+	margin-top: 5px; 
 	float: left;
 	border-radius: 40px;
-	/*border: 1px solid black;*/
 }
 
 #downloadBTN h3
@@ -189,9 +190,9 @@ body, html
 	float: left;
 	text-decoration: none;
 	color: black;
-	font-size: 24px;
+	font-size: 20px;
 	text-shadow: 1px 1px 1px lightgray;
-	margin: 27px 0px 27px 25px;
+	margin: 28px 0px 26px 20px;
 }
 
 #downloadBTN i
@@ -213,13 +214,34 @@ body, html
 }
 
 
-.productPage .infoSpace
+.productPage .textSpace
 {
-	display: none;
+	display: inline-block;
 	float: right;
 	width: 40%;
 	margin-right: 5%;
-	border: 1px solid black;
+	text-align: left;
+	margin-top: 20px;
+}
+
+.productPage .textSpace h2
+{
+	float: left;
+	margin-left: 30px;
+}
+
+.productPage .textSpace p
+{
+	float: left;
+	font-size: 18px;
+	line-height: 25px;
+}
+
+.productPage .textSpace a
+{
+	text-decoration: none;
+	color: #7423e1;
+	font-weight: bold;
 }
 
 
@@ -232,7 +254,7 @@ body, html
     float: right;
     text-align: right;
     font-size: 12pt;
-    margin-top: 30px;
+    margin-top: 40px;
     padding: 10px;
     color: grey;
 }
