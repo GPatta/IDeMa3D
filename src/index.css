@@ -1,13 +1,585 @@
 body {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Comfortaa', sans-serif;
+  width: 100%;
+  height: 100%;
+  background-color: white;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.header{
+  position: fixed;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  background-color: #FFC832;
+  box-shadow: 0px 2px 4px #606060;
+
+  z-index: 10;
+}
+
+.headerClosed{
+  height: 60px;
+  transition: height 0.5s;
+}
+
+.headerOpened{
+  height: 110px;
+  transition: height 0.5s;
+}
+
+.header .title{
+  display: flex;
+  align-items: center;
+}
+
+.header .title img{
+  height: 40px;
+  width: 40px;
+  margin: 0 10px 0 25px;
+}
+
+.header .title h1{
+  font-size: 22px;
+  font-weight: 600;
+  color: #202020;
+}
+.header .title h1 b{
+  font-weight: 900;
+}
+
+.headerClosed .menuIcon{
+  display: inline;
+  font-size: 25px;
+  margin: 0px 25px 0px 0px;
+}
+.headerClosed .closeIcon{
+  display: none;
+}
+
+.headerOpened .menuIcon{
+  display: none;
+}
+.headerOpened .closeIcon{
+  display: inline;
+  font-size: 25px;
+  margin: 0px 25px 0px 0px;
+}
+
+.headerClosed ul{
+  display: none;
+}
+
+.headerOpened ul{
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  margin: 10px 0px;
+  padding: 0px;
+
+  animation-name: fadein;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-in;
+}
+
+.header ul .link{
+  font-size: 16px;
+  margin: 0px 10px;
+  cursor: pointer;
+
+  text-decoration: none;
+  color: #202020;
+  border-bottom: 1px solid #FFC832;
+  transition: 0.5s;
+}
+
+.header ul .link:hover{
+  font-weight: bolder;
+  border-bottom: 1px solid #202020;
+  transition: 0.5s;
+}
+
+.header ul .link:active{
+  color: #808080;
+  border-bottom: 1px solid #808080;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.container .searchBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+  margin: 125px auto 50px auto;
+  border-radius: 18px;
+  background-color: #202020;
+  color: white;
+}
+
+.container .searchBox input{
+  height: 36px;
+  width: 100px;
+  border: none;
+  border-radius: 18px;
+  font-size: 18px;
+  padding: 0px 20px;
+  background-color: #202020;
+  color: white;
+  font-weight: lighter;
+  transition: width 0.5s;
+}
+
+.container .searchBox input:focus{
+  outline: none;
+  width: 200px;
+  transition: width 0.5s;
+}
+
+.container .searchBox .searchIcon{
+  margin: 0px 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.container .pages{
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+
+  width: 100%;
+}
+
+.container .pages .pageCard{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  cursor: pointer;
+
+  height: 200px;
+  width: 300px;
+  margin: 0px 0px 50px 0px;
+
+  text-decoration: none;
+  color: black;
+  transition: 0.5s;
+}
+.container .pages .pageCard:hover{
+  transform: scale(1.05);
+  transition: 0.5s;
+}
+.container .pages .pageCard img{
+  height: 150px;
+  border-radius: 20px;
+}
+.container .pages .pageCard h3{
+  text-align: center;
+  font-size: 18px;
+  margin: 25px 0px;
+}
+
+.container .designs{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+
+  width: 100%;
+}
+
+.container .designs .designCard{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 40vw;
+
+  margin: 50px 0px 50px 0px;
+  border: 1px solid #202020;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+
+  transition: 0.2s;
+}
+.container .designs .designCard img{
+  width: 100%;
+  border-radius: 10px 10px 0px 0px;
+  box-shadow: 0px 1px 3px #202020;
+}
+.container .designs .designCard h3{
+  font-size: 15px;
+  color: black;
+  margin: 10px 5px;
+}
+.container .designs .designCard:hover{
+  transform: scale(1.02);
+  filter: brightness(1.1);
+  transition: 0.2s;
+}
+
+.container .storeLink{
+  text-decoration: none;
+}
+.container .store{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container .store h2{
+  font-size: 18px;
+  font-weight: bolder;
+  margin: 20px 0px 0px 0px;
+  letter-spacing: 3px;
+  color: #FFC832;
+  text-shadow: 1px 1px 1px #202020;
+}
+.container .store img{
+  width: 80%;
+  margin: 10px 0px 20px 0px;
+}
+.container .store p{
+  color: black;
+  margin: 0px;
+}
+
+.about{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+}
+.about h2{
+  font-size: 20px;
+  font-weight: bolder;
+  margin: 140px 0px 20px 0px;
+  letter-spacing: 2px;
+  color: #FFC832;
+  text-shadow: 1px 1px 1px #202020;
+  text-align: center;
+}
+.about img{
+  max-height: 150px;
+  height: 50vw;
+  margin: 20px 0px;
+}
+.about p{
+  width: 80%;
+  margin: 20px 20px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 2;
+  word-spacing: 5px;
+  letter-spacing: 2px;
+}
+.about .links{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 20px 0px 0px 0px;
+}
+.about .links img{
+  height: 60px;
+  margin: 10px 20px;
+  border: 1px solid #202020;
+  border-radius: 50%;
+  box-shadow: 1px 1px 2px #202020;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.about .links img:hover{
+  transform: scale(1.05);
+  transition: 0.2s;
+}
+
+
+.objectPage{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 130px 0px 0px 0px;
+  width: 100%;
+}
+.objectPage h1{
+  order: 1;
+  font-size: 25px;
+  margin: 0px;
+}
+
+.objectPage .horizontalOP{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  order: 1;
+  width: 100%;
+}
+.objectPage .carousel{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  order: 2;
+
+  width: 80%;
+  height: 105vw;
+
+  margin: 30px 0px 50px 0px;
+
+  border: 1px solid #202020;
+  border-radius: 10px;
+  box-shadow: 1px 1px 2px gray;
+
+  background-color: #202020;
+}
+.objectPage .carousel .mainImg{
+  order: 1;
+  width: 100%;
+  height: initial;
+  border-radius: 10px 10px 0px 0px;
+
+  object-fit: contain;
+}
+.objectPage .carousel .secImg{
+  order: 2;
+  width: 30%;
+  height: auto;
+  border-radius: 5px;
+
+  cursor: pointer;
+}
+
+.objectPage .horizontalOP .verticalOP{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  order: 2;
+  width: 100%;
+}
+.objectPage .btnContainer{
+  display: flex;
+  justify-content: center;
+  order: 3;
+  width: 100%;
+}
+.objectPage .cultsBtn{
+  width: 35%;
+  height: 50px;
+  margin: 0px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #822ef5;
+  color: white;
+  box-shadow: 2px 2px 2px gray;
+}
+.objectPage .cultsBtn:hover{
+  border: 1px solid gray;
+  box-shadow: 2px 2px 2px gray;
+  background-color: white;
+  color: #822ef5;
+}
+.objectPage .cultsBtn:active{
+  box-shadow: 1px 1px 1px gray;
+}
+.objectPage .mmfBtn{
+  width: 35%;
+  height: 50px;
+  margin: 0px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2FC49E;
+  color: white;
+  box-shadow: 2px 2px 2px gray;
+}
+.objectPage .mmfBtn:hover{
+  border: 1px solid gray;
+  box-shadow: 2px 2px 2px gray;
+  background-color: white;
+  color: #2FC49E;
+}
+.objectPage .mmfBtn:active{
+  box-shadow: 1px 1px 1px gray;
+}
+.objectPage h3{
+  order: 4;
+  margin: 60px 0px 20px 0px;
+  width: 80%;
+  text-align: left;
+  padding: 0px 0px 0px 10vw;
+}
+.objectPage p{
+  order: 5;
+  width: 80%;
+  margin: 0px 0px 50px 0px;
+  font-size: 15px;
+  text-align: justify;
+  line-height: 1.5;
+  word-spacing: 3px;
+  letter-spacing: 1px;
+}
+
+.footer{
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: space-around;
+
+  width: 100%;
+  height: 100px;
+
+  background-color: #202020;
+}
+
+.footer p{
+  font-size: 14px;
+  font-weight: lighter;
+  color: white;
+  text-align: center;
+}
+
+@keyframes fadein {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@media only screen and (min-width: 768px){
+
+  .header .title img{
+    margin: 0px 20px 0px 40px;
+  }
+
+  .header .menuIcon{
+    display: none;
+  }
+
+  .header .closeIcon{
+    display: none;
+  }
+
+  .header ul{
+    display: flex;
+    margin: 0px 40px;
+    padding: none;
+  }
+
+  .header ul a{
+    font-size: 18px;
+    margin: 0px 20px;
+  }
+
+  .container{
+    min-height: 100vh;
+
+  }
+
+  .container .searchBox{
+    margin: 20vh auto 10vh auto;
+  }
+
+  .container .searchBox input{
+    width: 300px;
+  }
+  
+  .container .searchBox input:focus{
+    width: 500px;
+  }
+
+  .container .pages{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 5vh;
+  }
+  
+  .container .pages .pageCard{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+  
+    cursor: pointer;
+
+    width: 25%;
+    height: auto;
+    margin: 0px 0px 50px 0px;
+  
+    text-decoration: none;
+    color: black;
+  }
+  .container .pages .pageCard img{
+    width: 100%;
+    height: auto;
+  
+  }
+  .container .pages .pageCard h3{
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .container .designs{
+    width: 90%;
+    padding: 0 5%;
+  }
+  .container .designs .designCard{
+    width: 18vw;
+  
+    margin: 0px 0px 100px 0px;
+  }
+
+  .container .store h2{
+    font-size: 20px;
+    text-shadow: 2px 2px 2px #202020;
+  }
+  .container .store img{
+    height: 50vh;
+    width: auto;
+  }
+
+  .objectPage{
+    margin: 100px 0px 0px 0px;
+  }
+  .objectPage .horizontalOP{
+    flex-flow: row nowrap;
+    align-items: flex-start;
+  }
+  .objectPage .carousel{ 
+    
+    width: 100%;
+    max-width: 55vh;
+    height: 61vw;
+    max-height: 72vh;
+
+    margin: 50px 0px 50px 5vw;
+  }
+  .objectPage .btnContainer{
+    margin: 100px 0px 0px 0px;
+  }
+  .objectPage .btnContainer .cultsBtn{
+    font-size: 16px;
+  }
+  .objectPage .btnContainer .mmfBtn{
+    font-size: 16px;
+  }
+  .objectPage p{
+    font-size: 16px;
+  }
+
+}
+
+@media only screen and (min-width: 1000px){
+
 }
