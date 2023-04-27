@@ -1,0 +1,54 @@
+{
+  "site_title": "IDeMa 3D",
+  "background_color": "#F6FAFF",
+  "text_color": "black",
+  "profile_picture": "assets/logo.jpg",
+  "main_heading": "IDeMa 3D",
+  "secondary_heading": "Imagine, Design, Make",
+  "main_paragraph": "Check out the following links to find amazing 3D models!",
+
+  "links": [
+    {
+      "name": "Instagram",
+      "description": "IDeMa Instagram profile",
+      "link": "https://www.instagram.com/idema_3d",
+      "img": "assets/instagram.svg"
+    },
+    {
+      "name": "Cults3D",
+      "description": "IDeMa 3D Models",
+      "link": "https://cults3d.com/en/users/IDeMa_3D/creations",
+      "img": "assets/cults.svg"
+    },
+    {
+      "name": "MyMiniFactory",
+      "description": "IDeMa 3D Models",
+      "link": "https://www.myminifactory.com/users/IDeMa%203D",
+      "img": "assets/mmf.svg"
+    },
+    {
+      "name": "Printables",
+      "description": "IDeMa 3D Models",
+      "link": "https://www.printables.com/it/@IDeMa3D_381261",
+      "img": "assets/printables.jpg"
+    },
+    {
+      "name": "Thingiverse",
+      "description": "Coming soon",
+      "link": "https://www.thingiverse.com",
+      "img": "assets/model.svg"
+    },
+    {
+      "name": "Thangs",
+      "description": "Coming soon",
+      "link": "https://thangs.com",
+      "img": "assets/model.svg"
+    },
+    {
+      "name": "GrabCad",
+      "description": "Coming soon",
+      "link": "https://grabcad.com",
+      "img": "assets/model.svg"
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: white;
+    margin: 0;
+    height: 100vh;
+}
+
+a {
+    color: white;
+}
+
+
+.main-content {
+    min-height: 100vh;
+    /*background: linear-gradient(180deg, #ffc300 0%, #c79300 100%); */
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+#mainPicture {
+    height: 100px;
+    width: 100px;
+    margin-top: 10vh;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px black;
+}
+
+.main-content h1 {
+    margin: 0;
+    padding: 20px 20px 10px;
+    font-size: 3em;
+}
+
+.main-content h2 {
+    margin: 0;
+    padding: 10px 20px;
+    font-size: 2em;
+}
+
+.main-content p {
+    margin: 0;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.card-container {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 20px 0 100px 0;
+}
+.card-container .card {
+    margin: 10px 10%;
+    padding: 0;
+}
+
+.card-container .card-link {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow:  1px 1px 5px gray;
+    color: black;
+    text-decoration: none;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
+    transition: .2s ease-in;
+}
+.card-container .card-link:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+    transition: .2s ease-in;
+}
+
+.card-container .card-link img {
+    height: 30px;
+    width: 30px;
+    padding: 0;
+}
+
+.card-container .card h3 {
+    font-size: calc(1rem + .2vw);
+    margin: 0 20px;
+}
+.card-container .card p {
+    width: 100%;
+    margin: 10px;
+    padding: 0;
+    text-align: start;
+}
+
+
+
+@media screen and (min-width: 48em) {
+    .card-container {
+        width: 80%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    .card-container .card {
+        width: 40%;
+        margin: 20px;
+        padding: 0;
+    }
+}
+
+
+/* Footer styling: */
+footer {
+    background-color: #0f0f0f;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+.footer-ad-text {
+    font-size: 16px;
+    margin: 20px;
+}
+.footer-ad-link {
+    text-decoration: none;
+}
+.footer-copyright {
+    margin: 40px 0 0 0;
+    border-top: 1px solid white;
+    padding: 20px 0 0 0;
+    font-size: 14px;
+}
