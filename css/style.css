@@ -23,7 +23,7 @@ a {
 #mainPicture {
     height: 100px;
     width: 100px;
-    margin-top: 10vh;
+    margin-top: 5vh;
     border-radius: 50%;
     box-shadow: 1px 1px 5px black;
 }
@@ -113,24 +113,20 @@ a {
     }
 }
 
-
 /* Footer styling: */
 footer {
     background-color: #0f0f0f;
     color: white;
     text-align: center;
-    padding: 20px;
-}
-.footer-ad-text {
-    font-size: 16px;
-    margin: 20px;
 }
 .footer-ad-link {
+    display: block;
+    padding: 20px;
     text-decoration: none;
 }
 .footer-copyright {
-    margin: 40px 0 0 0;
+    margin: 0;
     border-top: 1px solid white;
-    padding: 20px 0 0 0;
+    padding: 20px;
     font-size: 14px;
 }
